@@ -73,7 +73,7 @@ public class EchoFM {
 
     private func graphQL(hash: String, variables: [String: Any] = [:]) async throws -> Any {
         let body: [String: Any] = [
-            "query": query,
+            "query": hash,
             "variables": variables
         ]
         let bodyData = try JSONSerialization.data(withJSONObject: body)
