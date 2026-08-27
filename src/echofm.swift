@@ -28,7 +28,7 @@ public enum HTTPMethod: String {
     case patch = "PATCH"
 }
 
-
+@preconcurrency
 public class EchoFM {
     private let api = "https://echofm.online/api/graphql"
     private let api2 = "https://echofm.online/_next/data"
