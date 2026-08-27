@@ -5,11 +5,16 @@ api for echofm.online Здесь все, как на старом добром �
 ```swift
 import Foundation
 import echofm
-let echo = EchoFM()
 
-do {
+@preconcurrency
+func fetchViews() async throws {
+    let echo = EchoFM()
     let views = try await echo.getViews(postId: 469191)
     print(views)
+}
+
+do {
+    try await fetchViews()
 } catch {
     print("Error: \(error)")
 }
